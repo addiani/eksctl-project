@@ -18,4 +18,15 @@ curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.17.9/2020-08-04/
 chmod +x ./kubectl
 sudo mv ./kubectl /usr/local/bin
 
+# creating the nodes:
+# Managed nodes – Linux ]
+ eksctl create cluster --name first-eks --region us-east-2 --nodegroup-name standard-nodes --node-type t3.small --managed
+which eksctl
+which kubectl
+ls .kube
+kubectl run nginx --image nginx --replicas 2
+kubectl get all
 
+
+# or Launch a Template: lcreate a file call it cluster-eks.yaml:
+---
